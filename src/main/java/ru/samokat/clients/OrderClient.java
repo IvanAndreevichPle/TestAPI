@@ -3,9 +3,7 @@ package ru.samokat.clients;
 import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
 import ru.samokat.objects.OrderObject;
-
 import static io.restassured.RestAssured.given;
-import static ru.samokat.clients.CourierClient.PATH_ORDER;
 import static ru.samokat.clients.CourierClient.PATH_ORDER;
 
 public class OrderClient {

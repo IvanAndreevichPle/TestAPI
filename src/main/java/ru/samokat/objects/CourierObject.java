@@ -1,24 +1,24 @@
 package ru.samokat.objects;
 
-
-
 public class CourierObject {
     private String login;
     private String password;
     private String firstName;
 
-    public CourierObject(){
+    public CourierObject() {
     }
 
-    public CourierObject setLogin(String login){
+    public CourierObject setLogin(String login) {
         this.login = login;
         return this;
     }
-    public CourierObject setPassword(String password){
+
+    public CourierObject setPassword(String password) {
         this.password = password;
         return this;
     }
-    public CourierObject setFirstName(String firstName){
+
+    public CourierObject setFirstName(String firstName) {
         this.firstName = firstName;
         return this;
     }

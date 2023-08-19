@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b9bb9bb-7eae-420c-8589-83395813f207" name="Changes" comment="feat: add all project files for pull request">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="5b9bb9bb-7eae-420c-8589-83395813f207" name="Changes" comment="feat: add target directory">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/samokat/clients/CourierClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/samokat/clients/CourierClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/samokat/clients/OrderClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/samokat/clients/OrderClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/samokat/data/CourierData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/samokat/data/CourierData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/samokat/generator/CourierGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/samokat/generator/CourierGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/samokat/objects/CourierObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/samokat/objects/CourierObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/samokat/objects/OrderObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/samokat/objects/OrderObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CourierClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CourierClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CreateOrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateOrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ListOrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ListOrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestClass.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +72,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692456483358</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: add target directory">
+      <created>1692456642726</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1692456642726</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -91,6 +107,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: add all project files for pull request" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add all project files for pull request" />
+    <MESSAGE value="feat: add target directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add target directory" />
   </component>
 </project>

@@ -5,6 +5,7 @@ import ru.samokat.objects.CourierObject;
 
 public class CourierGenerator {
     static Faker faker = new Faker();
+
     public static CourierObject generateCourier() {
         return new CourierObject().setLogin(
                 faker.animal().name()).setPassword(faker.food().dish()).setFirstName(faker.name().firstName());

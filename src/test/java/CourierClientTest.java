@@ -2,17 +2,16 @@ import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
-import ru.samokat.objects.CourierObject;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import ru.samokat.clients.CourierClient;
+import ru.samokat.objects.CourierObject;
 
-import static ru.samokat.data.CourierData.getCourierData;
-import static ru.samokat.generator.CourierGenerator.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
+import static ru.samokat.data.CourierData.getCourierData;
+import static ru.samokat.generator.CourierGenerator.*;
 
 public class CourierClientTest {
     private CourierClient createCourier;
@@ -27,6 +26,7 @@ public class CourierClientTest {
     private CourierObject emptyPassword;
     private CourierObject noPasswordCourierObject;
     private String courierId;
+
     @Before
     public void setUp() {
         createCourier = new CourierClient();
@@ -41,6 +41,7 @@ public class CourierClientTest {
         emptyPassword = generateCourierEmptyPassword();
         noPasswordCourierObject = generateCourierNoPassword();
     }
+
     @Test
     @DisplayName("Создание курьера: эндпоинт создания api/v1/courier")
     @Description("Проверка ожидаемого результата: statusCode и body")
@@ -48,6 +49,7 @@ public class CourierClientTest {
         ValidatableResponse response = createCourier.requestCreateCourier(validCourier);
         response.assertThat().statusCode(HttpStatus.SC_CREATED).body("ok", is(true));
     }
+
     @Test
     @DisplayName("Логин курьера в системе: эндпоинт api/v1/courier/login")
     @Description("Проверка ожидаемого результата: statusCode и body")
@@ -66,20 +68,21 @@ public class CourierClientTest {
         ValidatableResponse createResponse = createCourier.requestCreateCourier(validCourier);
         createResponse.assertThat().statusCode(HttpStatus.SC_CONFLICT).body("message",
                 is("Этот логин уже используется. Попробуйте другой."));
-
     }
+
     @Test
     @DisplayName("Создание курьера без пароля: эндпоинт логина api/v1/courier")
     @Description("Проверка ожидаемого результата: statusCode и body")
-    public void requestWithoutPasswordTest(){
+    public void requestWithoutPasswordTest() {
         ValidatableResponse loginResponse = сourierWithoutPassword.requestCreateCourier(emptyPasswordCourierObject);
         loginResponse.assertThat().statusCode(HttpStatus.SC_BAD_REQUEST).body("message",
                 is("Недостаточно данных для создания учетной записи"));
     }
+
     @Test
     @DisplayName("Создание курьера без поля пароль: эндпоинт логина api/v1/courier")
     @Description("Проверка ожидаемого результата: statusCode и body")
-    public void requestWithoutFieldPasswordTest(){
+    public void requestWithoutFieldPasswordTest() {
         ValidatableResponse loginResponse = createCourierNoPassword.requestCreateCourier(emptyPassword);
         loginResponse.assertThat().statusCode(HttpStatus.SC_BAD_REQUEST).body("message",
                 is("Недостаточно данных для создания учетной записи"));
@@ -93,24 +96,26 @@ public class CourierClientTest {
         loginResponse.assertThat().statusCode(HttpStatus.SC_NOT_FOUND).body("message",
                 is("Учетная запись не найдена"));
     }
+
     @Test
     @DisplayName("Создание логин курьера в системе, без логин или пароля: эндпоинт логина api/v1/courier/login")
     @Description("Проверка ожидаемого результата: statusCode и body")
-    public void requestCreateLoginWithoutPasswordTest(){
+    public void requestCreateLoginWithoutPasswordTest() {
         ValidatableResponse loginResponse = loginCourierWithoutPassword.requestCreateLoginInSystem(loginEmptyPasswordCourierObject);
         loginResponse.assertThat().statusCode(HttpStatus.SC_BAD_REQUEST).body("message",
                 is("Недостаточно данных для входа"));
     }
+
     @Test
     @DisplayName("Создание логин курьера в системе, без поля пароль: эндпоинт логина api/v1/courier/login")
     @Description("Проверка ожидаемого результата: statusCode")
-    public void requestCreateLoginWithoutFieldPasswordTest(){
+    public void requestCreateLoginWithoutFieldPasswordTest() {
         ValidatableResponse loginResponse = loginCourierClient.requestCreateLoginInSystem(noPasswordCourierObject);
         loginResponse.assertThat().statusCode(HttpStatus.SC_GATEWAY_TIMEOUT);
     }
+
     @After
-    public void tearDown()
-    {
+    public void tearDown() {
         createCourier.courierDelete(courierId);
     }
 }

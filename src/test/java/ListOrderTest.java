@@ -8,7 +8,6 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static ru.samokat.clients.CourierClient.PATH_ORDER;
 
-
 public class ListOrderTest {
     @Test
     @DisplayName("Получение списка заказов: эндпоинт /api/v1/orders")
@@ -17,7 +16,7 @@ public class ListOrderTest {
         new TestClass();
         Response response = given()
                 .get(PATH_ORDER);
-        response .then().assertThat().body("$", Matchers.allOf(
+        response.then().assertThat().body("$", Matchers.allOf(
                         Matchers.hasKey("orders"),
                         Matchers.hasKey("pageInfo"),
                         Matchers.hasKey("availableStations")))

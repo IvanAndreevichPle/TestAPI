@@ -11,7 +11,6 @@ public class CourierData {
         this.password = password;
     }
 
-
     public static CourierData getCourierData(CourierObject courierObject) {
         return new CourierData(courierObject.getLogin(), courierObject.getPassword());
     }

@@ -15,9 +15,11 @@ public class CourierClient {
     private static final String LOGIN_PATH = "api/v1/courier/login";
     public static final String PATH_ORDER = "/api/v1/orders";
     private static final String API_DELETE = "/api/v1/courier/";
+
     public CourierClient() {
         RestAssured.baseURI = BASE_URI;
     }
+
     @Step("Создание курьера")
     public ValidatableResponse requestCreateCourier(CourierObject courier) {
         return given()
@@ -39,6 +41,7 @@ public class CourierClient {
                 .post(LOGIN_PATH)
                 .then();
     }
+
     @Step("Создание логин курьера в системе без пароль")
     public ValidatableResponse requestCreateLoginInSystem(CourierObject courier) {
         return given()
@@ -49,7 +52,6 @@ public class CourierClient {
                 .post(LOGIN_PATH)
                 .then();
     }
-
 
     @Step("Удаление id курьера")
     public void courierDelete(String courierId) {
