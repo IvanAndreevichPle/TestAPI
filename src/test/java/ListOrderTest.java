@@ -19,7 +19,6 @@ public class ListOrderTest {
         response.then().assertThat().statusCode(HttpStatus.SC_OK).body("$", Matchers.allOf(
                         Matchers.hasKey("orders"),
                         Matchers.hasKey("pageInfo"),
-                        Matchers.hasKey("availableStations")))
-                .statusCode(HttpStatus.SC_OK);
+                        Matchers.hasKey("availableStations")));
     }
 }
