@@ -8,12 +8,11 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static ru.samokat.clients.CourierClient.PATH_ORDER;
 
-public class ListOrderTest {
+public class ListOrderTest extends TestClass{
     @Test
     @DisplayName("Получение списка заказов: эндпоинт /api/v1/orders")
     @Description("Проверка ожидаемого результата: statusCode и body")
     public void getListOrdersTest() {
-        new TestClass();
         Response response = given()
                 .get(PATH_ORDER);
         response.then().assertThat().statusCode(HttpStatus.SC_OK).body("$", Matchers.allOf(
