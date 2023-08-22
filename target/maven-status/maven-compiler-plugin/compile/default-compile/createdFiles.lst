@@ -1,0 +1,6 @@
+ru\samokat\data\CourierData.class
+ru\samokat\clients\CourierClient.class
+ru\samokat\objects\CourierObject.class
+ru\samokat\clients\OrderClient.class
+ru\samokat\generator\CourierGenerator.class
+ru\samokat\objects\OrderObject.class
